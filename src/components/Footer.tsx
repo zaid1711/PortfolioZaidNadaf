@@ -31,7 +31,7 @@ const Footer = () => {
               </div>
               <span className="font-cabinet font-extrabold text-lg sm:text-xl tracking-tighter text-card">Zaid Nadaf</span>
             </div>
-            <p className="font-satoshi text-xs sm:text-sm text-sage/60 leading-relaxed">Full-stack developer building digital experiences. 3rd year CS student passionate about modern web technologies.</p>
+            <p className="font-satoshi text-xs sm:text-sm text-sage/60 leading-relaxed">Full-stack developer building digital experiences. Final year CS student passionate about modern web technologies.</p>
             <div className="flex gap-2 sm:gap-3 mt-4 sm:mt-6">
               {[
                 { label: 'Gh', href: 'https://github.com/zaid1711', title: 'GitHub' },
@@ -72,7 +72,7 @@ const Footer = () => {
           ))}
         </div>
         <div className="border-t border-sage/10 mt-8 sm:mt-12 pt-6 sm:pt-8 text-center">
-          <p className="font-satoshi text-xs text-sage/40 leading-relaxed">© 2026 Zaid Nadaf. All rights reserved. | Built with React, TypeScript, and Tailwind CSS</p>
+          <p className="font-satoshi text-xs text-sage/40 leading-relaxed">© 2026 Zaid Nadaf. All rights reserved.</p>
         </div>
       </div>
     </footer>

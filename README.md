@@ -1,73 +1,140 @@
-# Welcome to your Lovable project
+# Yellow Brick Road - Portfolio
 
-## Project info
+A modern, responsive portfolio & landing page showcasing projects, services, and expertise. Built with React, TypeScript, and Tailwind CSS for performance and maintainability.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## 🚀 Features
 
-## How can I edit this code?
+- **Modern UI** - Clean, professional design with smooth animations
+- **Responsive Design** - Optimized for desktop, tablet, and mobile
+- **Fast Performance** - Built with Vite for lightning-fast builds and dev server
+- **Type Safe** - Full TypeScript support for better code quality
+- **Component Library** - Shadcn/ui for polished, accessible components
+- **Dark Mode Ready** - Integrated theme support with next-themes
+- **SEO Friendly** - Optimized metadata and semantic HTML
+- **Interactive** - Smooth scrolling, animations, and transitions
 
-There are several ways of editing your application.
+## 🎯 Getting Started
 
-**Use Lovable**
+### Prerequisites
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+- Node.js (v16 or higher)
+- npm
 
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+### Installation
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Clone the repository
+git clone https://github.com/yourusername/yellow-brick-road.git
+cd yellow-brick-road
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Install dependencies
+npm install
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start the development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The site will be available at `http://localhost:5173`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 📦 Available Scripts
 
-**Use GitHub Codespaces**
+- `npm run dev` - Start development server with hot reload
+- `npm run build` - Create optimized production build
+- `npm run preview` - Preview production build locally
+- `npm run test` - Run unit tests with Vitest
+- `npm run test:watch` - Run tests in watch mode
+- `npm run lint` - Check code quality with ESLint
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 🛠️ Tech Stack
 
-## What technologies are used for this project?
+- **React 18** - Modern UI library
+- **TypeScript** - Type-safe JavaScript
+- **Vite** - Next-generation build tool
+- **Tailwind CSS** - Utility-first styling
+- **Shadcn/ui** - High-quality components
+- **React Router** - Client-side routing
+- **React Hook Form** - Efficient form handling
+- **Recharts** - Data visualization
+- **Lucide Icons** - Beautiful icon library
+- **Vitest** - Lightning-fast unit testing
+- **Playwright** - End-to-end testing
 
-This project is built with:
+## 📁 Project Structure
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+```
+src/
+├── components/       # Reusable React components
+│   ├── ui/          # Shadcn/ui components
+│   ├── Navbar.tsx
+│   ├── HeroSection.tsx
+│   ├── Features.tsx
+│   └── ...
+├── pages/           # Page components
+├── hooks/           # Custom React hooks
+├── lib/             # Utility functions
+├── App.tsx          # Main app component
+├── main.tsx         # Entry point
+└── test/            # Test files
+public/              # Static assets
+```
 
-## How can I deploy this project?
+## 🎨 Customization
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+### Colors & Branding
+- Update Tailwind config in `tailwind.config.ts`
+- Modify theme colors in `src/index.css`
 
-## Can I connect a custom domain to my Lovable project?
+### Content
+- Edit component content in `src/components/`
+- Update text in individual component files
 
-Yes, you can!
+### Styling
+- All components use Tailwind CSS classes
+- Global styles in `src/index.css` and `src/App.css`
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 🚀 Deployment
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+### Vercel (Recommended)
+```bash
+npm run build
+# Deploy the `dist` folder to Vercel
+```
+
+### Netlify
+```bash
+npm run build
+# Connect your GitHub repo to Netlify
+# Netlify will automatically build and deploy
+```
+
+### GitHub Pages
+1. Update `vite.config.ts` with your repository name
+2. Run `npm run build`
+3. Push the `dist` folder to your `gh-pages` branch
+
+### Docker
+```dockerfile
+FROM node:18-alpine AS build
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+RUN npm run build
+
+FROM nginx:alpine
+COPY --from=build /app/dist /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
+```
+
+## 📝 License
+
+Licensed under the MIT License - feel free to use this project for personal or commercial purposes.
+
+## 👨‍💻 Author
+
+**Zaid**
+
+- Portfolio: [yellowbrickroad.dev](https://yourportfolio.com)
+- GitHub: [@yourusername](https://github.com/yourusername)
+- Email: your.email@example.com
