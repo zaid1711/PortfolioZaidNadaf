@@ -1,48 +1,48 @@
 import { X, Check } from "lucide-react";
 
 const ProblemSolution = () => {
-  const problems = [
-    "Wasting hours on repetitive manual tasks",
-    "Scattered tools that don't talk to each other",
-    "Losing leads because follow-ups slip through cracks",
-    "No visibility into what's actually working",
+  const challenges = [
+    "Websites that break on mobile devices",
+    "Slow, laggy applications frustrating users",
+    "Backend APIs that aren't scalable",
+    "Code that's hard to maintain and debug",
   ];
 
-  const solutions = [
-    "Automate 80% of your workflow in minutes",
-    "One unified platform for everything",
-    "Smart follow-ups that never miss a beat",
-    "Real-time analytics on every metric that matters",
+  const myApproach = [
+    "Mobile-first design + rigorous testing across devices",
+    "Optimization: lazy loading, caching, efficient queries",
+    "RESTful APIs with proper database indexing & caching",
+    "Clean code standards, documentation, and version control",
   ];
 
   return (
-    <section className="bg-card py-24">
-      <div className="container mx-auto px-6 lg:px-12">
-        <h2 className="font-cabinet font-extrabold text-4xl md:text-5xl tracking-tighter text-center mb-16">
-          Stop struggling. <span className="text-stroke">Start shipping.</span>
+    <section className="bg-card py-16 sm:py-24">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-12">
+        <h2 className="font-cabinet font-extrabold text-2xl sm:text-4xl md:text-5xl tracking-tighter text-center mb-12 sm:mb-16">
+          Real Problems. <span className="text-stroke">Practical Solutions.</span>
         </h2>
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {/* Problem Card */}
-          <div className="bg-muted rounded-3xl p-8 border-2 border-dashed border-foreground/30 opacity-70">
-            <h3 className="font-cabinet font-extrabold text-2xl tracking-tighter mb-6 text-foreground/60">The Old Way</h3>
-            <ul className="space-y-4">
-              {problems.map((p, i) => (
-                <li key={i} className="flex items-start gap-3 font-satoshi text-foreground/60">
-                  <X className="w-5 h-5 text-destructive mt-0.5 shrink-0" />
-                  {p}
+        <div className="grid md:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto">
+          {/* Challenges Card */}
+          <div className="bg-muted rounded-3xl p-6 sm:p-8 border-2 border-dashed border-foreground/30 opacity-70">
+            <h3 className="font-cabinet font-extrabold text-xl sm:text-2xl tracking-tighter mb-4 sm:mb-6 text-foreground/60">The Problems</h3>
+            <ul className="space-y-3 sm:space-y-4">
+              {challenges.map((c, i) => (
+                <li key={i} className="flex items-start gap-2 sm:gap-3 font-satoshi text-sm sm:text-base text-foreground/60">
+                  <X className="w-4 sm:w-5 h-4 sm:h-5 text-destructive mt-0.5 shrink-0" />
+                  {c}
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Solution Card */}
-          <div className="bg-yellow rounded-3xl p-8 border-2 border-foreground shadow-brutal-md">
-            <h3 className="font-cabinet font-extrabold text-2xl tracking-tighter mb-6">The Voltify Way</h3>
-            <ul className="space-y-4">
-              {solutions.map((s, i) => (
-                <li key={i} className="flex items-start gap-3 font-satoshi font-medium">
-                  <Check className="w-5 h-5 mt-0.5 shrink-0" />
-                  {s}
+          {/* Approach Card */}
+          <div className="bg-yellow rounded-3xl p-6 sm:p-8 border-2 border-foreground shadow-brutal-md">
+            <h3 className="font-cabinet font-extrabold text-xl sm:text-2xl tracking-tighter mb-4 sm:mb-6">How I Solve It</h3>
+            <ul className="space-y-3 sm:space-y-4">
+              {myApproach.map((approach, i) => (
+                <li key={i} className="flex items-start gap-2 sm:gap-3 font-satoshi font-medium text-sm sm:text-base">
+                  <Check className="w-4 sm:w-5 h-4 sm:h-5 mt-0.5 shrink-0" />
+                  {approach}
                 </li>
               ))}
             </ul>
