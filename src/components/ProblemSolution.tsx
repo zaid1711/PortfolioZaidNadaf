@@ -1,4 +1,5 @@
 import { X, Check } from "lucide-react";
+import { motion } from "framer-motion";
 
 const ProblemSolution = () => {
   const challenges = [
@@ -16,14 +17,26 @@ const ProblemSolution = () => {
   ];
 
   return (
-    <section className="bg-card py-16 sm:py-24">
+    <section className="bg-card py-16 sm:py-24 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-12">
-        <h2 className="font-cabinet font-extrabold text-2xl sm:text-4xl md:text-5xl tracking-tighter text-center mb-12 sm:mb-16">
+        <motion.h2 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.5 }}
+          className="font-cabinet font-extrabold text-2xl sm:text-4xl md:text-5xl tracking-tighter text-center mb-12 sm:mb-16"
+        >
           Real Problems. <span className="text-stroke">Practical Solutions.</span>
-        </h2>
+        </motion.h2>
         <div className="grid md:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto">
           {/* Challenges Card */}
-          <div className="bg-muted rounded-3xl p-6 sm:p-8 border-2 border-dashed border-foreground/30 opacity-70">
+          <motion.div 
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, type: "spring", bounce: 0.3 }}
+            className="bg-muted rounded-3xl p-6 sm:p-8 border-2 border-dashed border-foreground/30 opacity-70"
+          >
             <h3 className="font-cabinet font-extrabold text-xl sm:text-2xl tracking-tighter mb-4 sm:mb-6 text-foreground/60">The Problems</h3>
             <ul className="space-y-3 sm:space-y-4">
               {challenges.map((c, i) => (
@@ -33,10 +46,16 @@ const ProblemSolution = () => {
                 </li>
               ))}
             </ul>
-          </div>
+          </motion.div>
 
           {/* Approach Card */}
-          <div className="bg-yellow rounded-3xl p-6 sm:p-8 border-2 border-foreground shadow-brutal-md">
+          <motion.div 
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, delay: 0.2, type: "spring", bounce: 0.3 }}
+            className="bg-yellow rounded-3xl p-6 sm:p-8 border-2 border-foreground shadow-brutal-md"
+          >
             <h3 className="font-cabinet font-extrabold text-xl sm:text-2xl tracking-tighter mb-4 sm:mb-6">How I Solve It</h3>
             <ul className="space-y-3 sm:space-y-4">
               {myApproach.map((approach, i) => (
@@ -46,7 +65,7 @@ const ProblemSolution = () => {
                 </li>
               ))}
             </ul>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

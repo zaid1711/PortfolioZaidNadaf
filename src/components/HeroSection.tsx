@@ -1,33 +1,66 @@
+import { motion, Variants } from "framer-motion";
+
 const HeroSection = () => {
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" }
+    },
+  };
+
   return (
-    <section className="relative bg-yellow pt-24 sm:pt-32 md:pt-40 pb-16 sm:pb-24 border-b-2 border-foreground overflow-hidden min-h-screen flex items-center lg:min-h-auto">
+    <section className="relative bg-yellow pt-24 pb-12 sm:pt-32 md:pt-36 lg:pt-0 lg:pb-0 border-b-2 border-foreground overflow-hidden lg:h-screen lg:min-h-[700px] flex items-center">
       <div className="absolute inset-0 dot-pattern pointer-events-none" />
-      <div className="relative container mx-auto px-4 sm:px-6 lg:px-12 grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+      <div className="relative container mx-auto px-4 sm:px-6 lg:px-12 grid lg:grid-cols-12 gap-8 lg:gap-8 items-center mt-8 lg:mt-16">
         {/* Left Column */}
-        <div className="space-y-7 sm:space-y-8 md:space-y-10">
-          <span className="inline-block bg-card text-foreground font-satoshi font-bold text-xs sm:text-sm px-3 sm:px-4 py-1 sm:py-1.5 rounded-full border-2 border-foreground shadow-brutal-sm">
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="space-y-6 sm:space-y-6 lg:space-y-8 z-10 relative lg:col-span-6 xl:col-span-5"
+        >
+          <motion.span variants={itemVariants} className="inline-block bg-card text-foreground font-satoshi font-bold text-xs sm:text-sm px-3 sm:px-4 py-1 sm:py-1.5 rounded-full border-2 border-foreground shadow-brutal-sm">
             Full-Stack Developer • Prompt Engineer
-          </span>
-          <h1 className="font-cabinet font-extrabold text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl tracking-tighter leading-[0.9]">
+          </motion.span>
+          <motion.h1 variants={itemVariants} className="font-cabinet font-extrabold text-5xl sm:text-6xl md:text-7xl lg:text-[4.5rem] xl:text-[5.5rem] tracking-tighter leading-[0.95]">
             I build
             <br />
-            <span className="text-stroke">digital</span> experiences.
-          </h1>
-          <p className="font-satoshi text-sm sm:text-base md:text-lg max-w-md leading-relaxed opacity-80">
+            <span className="text-stroke">digital</span> 
+            <br className="hidden lg:block xl:hidden"/> experiences.
+          </motion.h1>
+          <motion.p variants={itemVariants} className="font-satoshi text-sm sm:text-base md:text-lg max-w-md leading-relaxed opacity-80">
             Final year CS student at Sharad Institute of Technology, passionate about modern web technologies and creating seamless user experiences.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 pt-3">
+          </motion.p>
+          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 sm:gap-5 pt-2">
             <a href="#projects" className="inline-flex items-center justify-center bg-foreground text-card font-satoshi font-bold text-xs sm:text-sm px-5 sm:px-7 py-2.5 sm:py-3 border-2 border-foreground rounded-lg shadow-brutal-md btn-brutal-press hover:opacity-80 transition-opacity w-full sm:w-auto whitespace-nowrap">
               View My Work →
             </a>
             <a href="#cta" className="inline-flex items-center justify-center bg-card text-foreground font-satoshi font-bold text-xs sm:text-sm px-5 sm:px-7 py-2.5 sm:py-3 border-2 border-foreground rounded-lg shadow-brutal-sm btn-brutal-press hover:opacity-80 transition-opacity w-full sm:w-auto">
               Contact Me
             </a>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
         {/* Right Column - Portfolio Stats */}
-        <div className="bg-card border-2 border-foreground rounded-2xl shadow-brutal-lg overflow-hidden">
+        <motion.div 
+          initial={{ opacity: 0, x: 50, rotate: 2 }}
+          animate={{ opacity: 1, x: 0, rotate: 0 }}
+          transition={{ duration: 0.8, delay: 0.5, type: "spring", bounce: 0.4 }}
+          className="bg-card border-2 border-foreground rounded-2xl shadow-brutal-lg overflow-hidden z-0 lg:col-span-6 xl:col-span-7"
+        >
           <div className="bg-foreground px-3 py-2 flex items-center gap-1.5 overflow-x-auto">
             <div className="w-2.5 h-2.5 rounded-full bg-[#ff5f57] flex-shrink-0" />
             <div className="w-2.5 h-2.5 rounded-full bg-[#febc2e] flex-shrink-0" />
@@ -73,7 +106,7 @@ const HeroSection = () => {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -17,7 +17,7 @@ A modern, responsive portfolio & landing page showcasing projects, services, and
 
 ### Prerequisites
 
-- Node.js (v16 or higher)
+
 - npm
 
 ### Installation
@@ -130,11 +130,3 @@ CMD ["nginx", "-g", "daemon off;"]
 ## 📝 License
 
 Licensed under the MIT License - feel free to use this project for personal or commercial purposes.
-
-## 👨‍💻 Author
-
-**Zaid**
-
-- Portfolio: [yellowbrickroad.dev](https://yourportfolio.com)
-- GitHub: [@yourusername](https://github.com/yourusername)
-- Email: your.email@example.com
