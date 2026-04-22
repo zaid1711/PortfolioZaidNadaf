@@ -3,8 +3,8 @@ import { ArrowUpRight } from "lucide-react";
 
 const projects = [
   { badge: "Full-Stack", title: "Customia", desc: "A Django-based jewellery storefront with React frontend, PostgreSQL database, and WhatsApp API integration for seamless ordering.", bg: "bg-sage", text: "text-foreground", link: "https://customia.in" },
-  { badge: "Backend", title: "E-Commerce Core", desc: "Robust API with JWT authentication, MongoDB integration, and Stripe payment processing for scalable e-commerce platforms.", bg: "bg-yellow", text: "text-foreground", shadow: true },
-  { badge: "Full-Stack", title: "Portfolio Projects", desc: "Various web applications showcasing frontend excellence, backend architecture, and modern development practices across multiple tech stacks.", bg: "bg-[#272727]", text: "text-card" },
+  { badge: "Backend", title: "AFQ Islamic Institute Website. ", desc: "Built a responsive website using React.js, Vite, and Framer Motion, featuring smooth animations and structured content for improved user experience.", bg: "bg-yellow", text: "text-foreground", link: "https://afq-gold.vercel.app", shadow: true },
+  { badge: "Full-Stack", title: "Portfolio Projects", desc: "Various web applications showcasing frontend excellence, backend architecture, and modern development practices across multiple tech stacks.", bg: "bg-[#272727]", text: "text-card", link: "https://portfolio-zaid-nadaf.vercel.app" },
 ];
 
 const UseCasePersonas = () => {
